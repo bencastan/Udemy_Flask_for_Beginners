@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Flask App</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
+    <p> Please enter your name</p>
+    <br>
+    <p> Height in Kg and Weight M</p>
+
+    <form class="pure-form" method="POST" action="/">
+        Name:<br>
+        <input type="text" name="username">
+        <br><br>
+        Weight in Kg<br>
+        <input type="text" name="weight"><br>
+        <br><br>
+        Height in M, i.e 1.75<br>
+        <input type="text" name="height"><br>
+        <br><br>
+        <button type="submit" class="pure-button pure-button-primary" value="Submit">submit</button>
+    </form>
+</div>
+
+    <br>
+
+<div>
+    {% if name %}
+        <p>Welcome to my site {{  name }} ! </p>
+        <br>
+        <p>Your BMI is {{  bmi }}</p>
+    {%  endif %}
+</div>
+
+</body>
+</html>
